@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern App & Password Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="logo">ModernApp</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#generator">Generator</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="btn-toggle">🌙 Dark Mode</button>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="hero-content">
+          <h1>Build & Secure Your Digital Web</h1>
+          <p>
+            A clean web page equipped with an instant, customizable Password
+            Generator built using pure HTML, CSS, and JS.
+          </p>
+          <a href="#generator" class="btn-primary">Try Password Generator</a>
+        </div>
+      </section>
+
+      <!-- Password Generator Tool Section -->
+      <section id="generator" class="generator-section">
+        <div class="generator-card">
+          <h2>🔐 Password Generator</h2>
+
+          <!-- Output Box -->
+          <div class="result-container">
+            <input
+              type="text"
+              id="password-output"
+              readonly
+              placeholder="Click Generate below"
+            />
+            <button
+              id="copy-btn"
+              class="btn-secondary"
+              title="Copy to Clipboard"
+            >
+              📋 Copy
+            </button>
+          </div>
+
+          <!-- Controls -->
+          <div class="controls">
+            <div class="control-group">
+              <label for="length-slider"
+                >Length: <span id="length-val">16</span></label
+              >
+              <input
+                type="range"
+                id="length-slider"
+                min="6"
+                max="32"
+                value="16"
+              />
+            </div>
+
+            <div class="options-grid">
+              <label class="checkbox-label">
+                <input type="checkbox" id="chk-uppercase" checked /> Uppercase
+                (A-Z)
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="chk-lowercase" checked /> Lowercase
+                (a-z)
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="chk-numbers" checked /> Numbers (0-9)
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="chk-symbols" checked /> Symbols
+                (!@#$%)
+              </label>
+            </div>
+
+            <button id="generate-btn" class="btn-primary full-width">
+              Generate Password
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="features-section">
+        <h2>Features</h2>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="icon">🔒</div>
+            <h3>Secure & Private</h3>
+            <p>
+              Passwords are generated locally right inside your web browser
+              without sending data anywhere.
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Fast & Lightweight</h3>
+            <p>
+              Pure JavaScript with zero heavy external frameworks or
+              dependencies.
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Dark Mode Support</h3>
+            <p>
+              Full CSS custom properties supporting seamless light and dark mode
+              switching.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <h2>Get in Touch</h2>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              required
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              required
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              rows="4"
+              required
+              placeholder="Write your message..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%">
+            Send Message
+          </button>
+          <p id="form-status" class="status-msg"></p>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; <span id="year"></span> ModernApp. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
